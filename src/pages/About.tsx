@@ -13,24 +13,76 @@ const About = () => {
       </Box>
 
       <Container maxWidth="xl">
-        <Typography>About Us</Typography>
-        <Typography>Self Storage Containers in Keighley</Typography>
-        <Box sx={{ width: "50%" }}>
-          <Typography>
-            LS10 STORAGE CONTAINERS in Leeds offers both businesses and
-            individuals a secure and cost effective solution for storage in
-            Leeds. We are conveniently situated in Hunslet which is easily
-            accessible to Leeds City Centre and Motorway networks. LS10 Storage
-            has a loading ramp on site which enables a smooth and easy process
-            for container loading. We can allow two 40ft containers on site at
-            the same time. Conveniently located Container Storage Leeds for the
-            following areas for domestic, business and student self-storage:
-            Leeds, Alwoodley, Armley, Batley, Beeston, Belle Isle,Holbeck,
-            Bramley and Stanningley, Chapel Allerton, Dewsbury,East Ardsley,
-            Farnley, Gildersome, Headingley, Hunslet, Hyde Park,Lofthouse,
-            Meanwood,Middleton, Middleton Park, Moortown, Morley, Pudsey,
-            Rothwell, Roundhay, Shadwell, Tingley & Wortley.
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"flex-start"}
+          marginBottom={"10px"}
+        >
+          <Typography fontSize={"36px"}>About Us</Typography>
+          <Typography fontSize={"28px"}>
+            Self Storage Containers in Keighley
           </Typography>
+        </Box>
+
+        <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
+          <Box sx={{ width: "50%" }}>
+            <Typography align="left">
+              Keighley Container Storage offers both businesses and individuals
+              a secure and cost effective solution for storage in Keighley. We
+              are conveniently situated on Woodhouse Road which is easily
+              accessible from South Street.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Box sx={{ width: "50%", alignSelf: "flex-end" }}>
+            <Typography align="right">
+              We're a down to earth and local business, and are on hand to
+              answer questions and provide support around the clock if needed by
+              our clients.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
+          <Box sx={{ width: "50%" }}>
+            <Typography align="left">
+              We're a down to earth and local business, and are on hand to
+              answer questions and provide support around the clock if needed by
+              our clients.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            width: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Box sx={{ width: "50%" }}>
+            <Typography align="right">
+              Conveniently located Container Storage Leeds for the following
+              areas for domestic, business and student self-storage: Leeds,
+              Keighley, Silsden, Steeton, Cross Hills, Cowling, Oakworth,
+              Oxenhope, Cullingworth, Denholme, Addingham, Burley in Wharfedale,
+              Sutton-in-Craven, Cononley, Kildwick, Farnhill, Bradley,
+              Riddlesden, Eastburn, Stanbury, Haworth, Harden, Cragg Vale,
+              Mytholmroyd, Luddendenfoot, Sowerby Bridge, Ripponden, Marsden,
+              Meltham, Holmfirth, Clayton, and Thornton.
+            </Typography>
+          </Box>
         </Box>
 
         <Box sx={{ backgroundColor: "red", height: "30vh" }}></Box>
