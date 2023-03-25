@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Error from "./pages/Error";
+import Location from "./pages/Location";
+import Price from "./pages/Price";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Box } from "@mui/material";
 
@@ -19,14 +21,18 @@ function App() {
             links={[
               { name: "Home", to: "/" },
               { name: "About", to: "/about" },
+              { name: "Location", to: "/location" },
+              { name: "Price", to: "/price" },
               { name: "Contact Us", to: "/contact" },
             ]}
           />
 
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/price" element={<Price />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Routes>
 
