@@ -7,31 +7,40 @@ import {
   makeStyles,
   Box,
 } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const Header = () => {
+interface HeaderProps {
+  links: { name: string; to: string }[];
+}
+
+const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <AppBar
-      sx={{
-        backgroundColor: "#012a2c",
-        padding: "0.5rem 5rem 0.5rem 5rem",
-      }}
-    >
-      <Toolbar
+    <>
+      <AppBar
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
+          backgroundColor: "#012a2c",
+          padding: "0.5rem 5rem 0.5rem 5rem",
         }}
       >
-        <Typography variant="h6">Keighley Container Storage</Typography>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Button sx={{ color: "white" }}>Home</Button>
-          <Button sx={{ color: "white" }}>About</Button>
-          <Button sx={{ color: "white" }}>Location</Button>
-          <Button sx={{ color: "white" }}>Price</Button>
-          <Button sx={{ color: "white" }}>Contact Us</Button>
-        </Box>
-      </Toolbar>
-    </AppBar>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography variant="h6">Keighley Container Storage</Typography>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            {links.map((link) => (
+              <Link key={link.to} to={link.to}>
+                <Button sx={{ color: "white" }}>{link.name}</Button>
+              </Link>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+      <Box sx={{ height: "1.5rem" }}></Box>
+    </>
   );
 };
 

@@ -13,8 +13,16 @@ const Footer = () => {
     },
   };
 
+  const footerStyles = {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "50px",
+  };
+
   return (
-    <Container maxWidth="xl" sx={{ mt: 8, mb: 2 }}>
+    <Container maxWidth="xl" sx={{ ...footerStyles, mt: 8, mb: 2 }}>
       <Box sx={{ backgroundColor: "#012a2c", height: "5px" }} />
       <Box
         marginTop={"10px"}
@@ -31,12 +39,13 @@ const Footer = () => {
         </Box>
       </Box>
       <Typography
-        fontSize={"12px"}
+        fontSize={"10px"}
         color="black"
         align="left"
         marginTop={"10px"}
       >
-        © {new Date().getFullYear()} My Company. All rights reserved.
+        Copyright © {new Date().getFullYear()} Keighley Container Storage. All
+        rights reserved.
       </Typography>
     </Container>
   );
