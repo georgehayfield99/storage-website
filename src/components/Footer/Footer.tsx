@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
   const iconStyles = {
     marginLeft: "10px",
     color: "#012a2c",
@@ -16,7 +16,7 @@ const Footer = () => {
 
   const footerStyles = {
     // change to relative if you want it to not be on content?
-    position: "relative",
+    position: isContentTaller ? "relative" : "absolute",
     bottom: 0,
     left: 0,
     right: 0,

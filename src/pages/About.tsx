@@ -8,14 +8,25 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../container.jpeg";
 import Service from "../components/Service/Service";
 import Terms from "../components/Terms/Terms";
+import Footer from "../components/Footer/Footer";
 
 const About = () => {
+  const [isContentTaller, setIsContentTaller] = useState(true);
+  const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (contentRef) {
+      const contentHeight = contentRef.clientHeight;
+      const viewportHeight = window.innerHeight;
+      setIsContentTaller(contentHeight > viewportHeight);
+    }
+  }, [contentRef]);
   return (
-    <>
+    <div ref={setContentRef}>
       <Box sx={{ height: "30vh", backgroundColor: "red" }}>
         <img
           src={logo}
@@ -116,8 +127,9 @@ const About = () => {
         />
 
         <Service />
+        <Footer isContentTaller={isContentTaller} />
       </Container>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import HeroSlider, { Overlay, Slide, MenuNav } from "hero-slider";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Wrapper from "../components/Wrapper";
 import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
@@ -10,10 +10,21 @@ import container2 from "../container2.webp";
 import container3 from "../container3.jpeg";
 import { AddBox } from "@mui/icons-material";
 import Service from "../components/Service/Service";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
+  const [isContentTaller, setIsContentTaller] = useState(true);
+  const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (contentRef) {
+      const contentHeight = contentRef.clientHeight;
+      const viewportHeight = window.innerHeight;
+      setIsContentTaller(contentHeight > viewportHeight);
+    }
+  }, [contentRef]);
   return (
-    <>
+    <div ref={setContentRef}>
       <HeroSlider
         height={"93vh"}
         autoplay
@@ -167,8 +178,9 @@ const Home = () => {
         <Box sx={{ backgroundColor: "red", height: "60vh" }}></Box>
         <Box sx={{ backgroundColor: "blue", height: "60vh" }}></Box>
         <Box sx={{ backgroundColor: "green", height: "60vh" }}></Box>
+        <Footer isContentTaller={isContentTaller} />
       </Container>
-    </>
+    </div>
   );
 };
 

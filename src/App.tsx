@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -13,8 +13,19 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Box } from "@mui/material";
 
 function App() {
+  const [isContentTaller, setIsContentTaller] = useState(true);
+  const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (contentRef) {
+      const contentHeight = contentRef.clientHeight;
+      const viewportHeight = window.innerHeight;
+      setIsContentTaller(contentHeight > viewportHeight);
+    }
+  }, [contentRef]);
+
   return (
-    <div className="App">
+    <div className="App" ref={setContentRef}>
       <Router basename="/">
         <Box sx={{ position: "relative", minHeight: "100vh" }}>
           <Header
@@ -36,8 +47,8 @@ function App() {
             <Route path="*" element={<Error />} />
           </Routes>
 
-          <Footer />
-        </Box>{" "}
+          {/* <Footer isContentTaller={isContentTaller} /> */}
+        </Box>
       </Router>
     </div>
   );
