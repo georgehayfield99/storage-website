@@ -46,8 +46,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Error />} />
           </Routes>
-
-          {/* <Footer isContentTaller={isContentTaller} /> */}
         </Box>
       </Router>
     </div>

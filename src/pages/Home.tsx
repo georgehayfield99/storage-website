@@ -11,6 +11,7 @@ import container3 from "../container3.jpeg";
 import { AddBox } from "@mui/icons-material";
 import Service from "../components/Service/Service";
 import Footer from "../components/Footer/Footer";
+import Terms from "../components/Terms/Terms";
 
 const Home = () => {
   const [isContentTaller, setIsContentTaller] = useState(true);
@@ -172,12 +173,9 @@ const Home = () => {
 
         <MenuNav />
       </HeroSlider>
-      <div>This is the Home Page</div>
       <Container maxWidth="xl">
         <Service />
-        <Box sx={{ backgroundColor: "red", height: "60vh" }}></Box>
-        <Box sx={{ backgroundColor: "blue", height: "60vh" }}></Box>
-        <Box sx={{ backgroundColor: "green", height: "60vh" }}></Box>
+        <Terms />
         <Footer isContentTaller={isContentTaller} />
       </Container>
     </div>

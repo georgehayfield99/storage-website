@@ -25,7 +25,15 @@ const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
 
   return (
     <>
-      <Container maxWidth="xl" sx={{ ...footerStyles, mt: 8, mb: 2 }}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          ...footerStyles,
+          mt: 8,
+          mb: 2,
+        }}
+        disableGutters={true}
+      >
         <Divider />
         <Typography
           fontSize={"26px"}

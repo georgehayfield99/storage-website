@@ -1,6 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Error = () => {
   const [isContentTaller, setIsContentTaller] = useState(true);
@@ -23,18 +25,32 @@ const Error = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#f8f8f8",
+            height: "75vh",
           }}
         >
-          <Typography variant="h1" align="center" gutterBottom>
-            Oops!
+          <Typography fontSize={"64px"} align="center" gutterBottom>
+            Well, this is awkward...
           </Typography>
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography fontSize={"36px"} align="center" gutterBottom>
             We couldn't find the page you're looking for.
           </Typography>
-          <Button variant="contained" sx={{ mt: 4 }}>
-            Go back home
-          </Button>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIcon />}
+              sx={{
+                mt: 4,
+                color: "#012a2c",
+                borderColor: "#012a2c",
+                "&:hover": {
+                  borderColor: "#105357",
+                  color: "#105357",
+                },
+              }}
+            >
+              Go back home
+            </Button>
+          </Link>
         </Box>
         <Footer isContentTaller={isContentTaller} />
       </Box>
