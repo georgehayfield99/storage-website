@@ -16,7 +16,7 @@ const Footer = () => {
 
   const footerStyles = {
     // change to relative if you want it to not be on content?
-    position: "absolute",
+    position: "relative",
     bottom: 0,
     left: 0,
     right: 0,
