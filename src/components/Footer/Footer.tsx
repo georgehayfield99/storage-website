@@ -29,7 +29,6 @@ const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
         maxWidth="xl"
         sx={{
           ...footerStyles,
-          mt: 8,
           mb: 2,
         }}
         disableGutters={true}

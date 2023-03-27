@@ -1,10 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 
 const Contact = () => {
   const [isContentTaller, setIsContentTaller] = useState(true);
   const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+  const [minHeight, setMinHeight] = useState(window.innerHeight - 80);
 
   useEffect(() => {
     if (contentRef) {
@@ -12,14 +13,32 @@ const Contact = () => {
       const viewportHeight = window.innerHeight;
       setIsContentTaller(contentHeight > viewportHeight);
     }
+    const handleResize = () => {
+      setMinHeight(window.innerHeight - 80);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [contentRef]);
 
   return (
     <div ref={setContentRef}>
-      <Box sx={{ position: "relative", minHeight: "93vh" }}>
-        <div>This is the Contact Page</div>
-        <Footer isContentTaller={isContentTaller} />
+      <Box sx={{ position: "relative", minHeight: `${minHeight}px` }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: `${minHeight}px`,
+          }}
+        >
+          <Typography>TEST</Typography>
+        </Box>
       </Box>
+      <Footer isContentTaller={isContentTaller} />
     </div>
   );
 };

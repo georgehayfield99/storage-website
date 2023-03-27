@@ -7,6 +7,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 const Error = () => {
   const [isContentTaller, setIsContentTaller] = useState(true);
   const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+  const [minHeight, setMinHeight] = useState(window.innerHeight - 80);
 
   useEffect(() => {
     if (contentRef) {
@@ -14,11 +15,20 @@ const Error = () => {
       const viewportHeight = window.innerHeight;
       setIsContentTaller(contentHeight > viewportHeight);
     }
+    const handleResize = () => {
+      setMinHeight(window.innerHeight - 80);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [contentRef]);
 
   return (
     <div ref={setContentRef}>
-      <Box sx={{ position: "relative", minHeight: "93vh" }}>
+      <Box sx={{ position: "relative", minHeight: `${minHeight}px` }}>
         <Box
           sx={{
             display: "flex",

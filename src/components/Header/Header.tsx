@@ -2,16 +2,25 @@ import * as React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { makeStyles } from "@material-ui/styles";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface HeaderProps {
   links: { name: string; to: string }[];
 }
 
 const Header: React.FC<HeaderProps> = ({ links }) => {
+  const appBarRef = useRef<HTMLDivElement>(null);
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (appBarRef.current) {
+      setHeaderHeight(appBarRef.current.offsetHeight);
+    }
+  }, []);
   return (
     <>
       <AppBar
+        ref={appBarRef}
         sx={{
           backgroundColor: "#012a2c",
           padding: "0.5rem 5rem 0.5rem 5rem",

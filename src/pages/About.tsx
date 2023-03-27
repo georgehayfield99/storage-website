@@ -17,6 +17,7 @@ import Footer from "../components/Footer/Footer";
 const About = () => {
   const [isContentTaller, setIsContentTaller] = useState(true);
   const [contentRef, setContentRef] = useState<HTMLDivElement | null>(null);
+  const [minHeight, setMinHeight] = useState(window.innerHeight - 80);
 
   useEffect(() => {
     if (contentRef) {
@@ -24,7 +25,17 @@ const About = () => {
       const viewportHeight = window.innerHeight;
       setIsContentTaller(contentHeight > viewportHeight);
     }
+    const handleResize = () => {
+      setMinHeight(window.innerHeight - 80);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [contentRef]);
+
   return (
     <div ref={setContentRef}>
       <Box sx={{ height: "30vh", backgroundColor: "red" }}>
