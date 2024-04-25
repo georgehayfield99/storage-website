@@ -32,13 +32,12 @@ const Contact = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: `${minHeight}px`,
           }}
         >
           <Typography>TEST</Typography>
-        </Box>
+        </Box>{" "}
+        <Footer isContentTaller={isContentTaller} />
       </Box>
-      <Footer isContentTaller={isContentTaller} />
     </div>
   );
 };

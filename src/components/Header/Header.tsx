@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { makeStyles } from "@material-ui/styles";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import Logo from "../../Logo.svg";
 
 interface HeaderProps {
   links: { name: string; to: string }[];
@@ -32,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="h6">Keighley Container Storage</Typography>
+          <img src={Logo} alt="Logo" />
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {links.map((link) => (
               <Link
