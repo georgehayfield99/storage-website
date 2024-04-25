@@ -1,6 +1,7 @@
 import { Box, Container, Divider, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import XIcon from "@mui/icons-material/X";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
@@ -54,13 +55,19 @@ const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
           flexDirection={"row"}
           justifyContent={"space-between"}
         >
-          <Typography>Keighley Container Storage</Typography>
+          <Box display={"flex"} flexDirection={"row"}>
+            <Typography>Hayfield Group</Typography>
+            <Typography>About Us</Typography>
+            <Typography>Contact Us</Typography>
+            <Typography>Newsroom</Typography>
+          </Box>
+
           <Box>
             <Link to="https://www.facebook.com">
               <FacebookIcon sx={{ ...iconStyles }} />
             </Link>
-            <Link to="https://www.twitter.com">
-              <TwitterIcon sx={{ ...iconStyles }} />
+            <Link to="https://www.x.com">
+              <XIcon sx={{ ...iconStyles }} />
             </Link>
             <Link to="https://www.linkedin.com">
               <LinkedInIcon sx={{ ...iconStyles }} />
@@ -76,8 +83,8 @@ const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
           align="left"
           marginTop={"10px"}
         >
-          Copyright © {new Date().getFullYear()} Keighley Container Storage. All
-          rights reserved.
+          Copyright © {new Date().getFullYear()} Hayfield Group Ltd. All rights
+          reserved.
         </Typography>
       </Container>
     </>
