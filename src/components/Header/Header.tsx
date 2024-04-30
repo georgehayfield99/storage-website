@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { makeStyles } from "@material-ui/styles";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
-import Logo from "../../Logo.svg";
+import Logo from "../../Group 2.svg";
 
 interface HeaderProps {
   links: { name: string; to: string }[];
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
         ref={appBarRef}
         sx={{
           backgroundColor: "#012a2c",
-          padding: "0.5rem 5rem 0.5rem 5rem",
+          padding: "0.5rem 1rem 0.5rem 1rem",
         }}
       >
         <Toolbar
@@ -33,7 +33,10 @@ const Header: React.FC<HeaderProps> = ({ links }) => {
             justifyContent: "space-between",
           }}
         >
-          <img src={Logo} alt="Logo" />
+          <Link to={"/"} style={{ display: "flex", alignItems: "center" }}>
+            <img src={Logo} alt="Logo" style={{ height: "4rem" }} />
+          </Link>
+
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {links.map((link) => (
               <Link
