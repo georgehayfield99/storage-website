@@ -57,9 +57,12 @@ const Footer = ({ isContentTaller }: { isContentTaller: boolean }) => {
         >
           <Box display={"flex"} flexDirection={"row"}>
             <Typography>Hayfield Group</Typography>
-            <Typography>About Us</Typography>
-            <Typography>Contact Us</Typography>
-            <Typography>Newsroom</Typography>
+            <Link to={"/about"} style={{ textDecoration: "none" }}>
+              <Typography color={"black"}>About Us</Typography>
+            </Link>
+            <Link to={"/contact"} style={{ textDecoration: "none" }}>
+              <Typography color={"black"}>Contact Us</Typography>
+            </Link>
           </Box>
 
           <Box>

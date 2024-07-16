@@ -1,15 +1,6 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import logo from "../container.jpeg";
+import landscape from "../landscape.svg";
 import Service from "../components/Service/Service";
 import Terms from "../components/Terms/Terms";
 import Footer from "../components/Footer/Footer";
@@ -38,9 +29,9 @@ const About = () => {
 
   return (
     <div ref={setContentRef}>
-      <Box sx={{ height: "30vh", backgroundColor: "red" }}>
+      <Box sx={{ height: "30vh" }}>
         <img
-          src={logo}
+          src={landscape}
           style={{ height: "100%", width: "100%", objectFit: "cover" }}
         />
       </Box>
